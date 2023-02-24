@@ -37,7 +37,8 @@ class Car {
             }
         }
         if(this.brand == null) {
-            System.out.println("invalid car brand");
+            System.out.println("Invalid brand");
+            throw new IllegalArgumentException("Invalid brand");
         }
     }
 
@@ -57,7 +58,8 @@ class Car {
         if(year >= 1886 && year <= 2023){
             this.year = year;
         } else {
-            System.out.println("invalid car model date");
+            System.out.println("Invalid date");
+            throw new IllegalArgumentException("Invalid date");
         }
     }
 
