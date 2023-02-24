@@ -2,17 +2,25 @@ package com.hashpack;
 
 class Car {
 
+    private int id;
     private String brand;
     private String color;
-    private String fuel;
     private int year;
-    private String[] brands = new String[]{"bmw", "Chevrolet", "ford", "honda", "hyundai", "porsche"};
+    private String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche"};
 
-    public Car(String b, String c, String f, int y) {
+    public Car(int id, String b, String c, int y) {
+        setId(id);
         setBrand(b);
         setColor(c);
-        setFuel(f);
         setYear(y);
+    }
+
+    public String getCarParameters() {
+        String carInstance = "ID: " + id + "\n" +
+                "Brand:" + brand + "\n" +
+                "Color: " + color + "\n" +
+                "Model year: " + year + "\n";
+        return carInstance;
     }
 
     public String getBrand() {
@@ -41,23 +49,6 @@ class Car {
         this.color = color;
     }
 
-    public String getFuel() {
-        return fuel;
-    }
-
-    public void setFuel(String fuel) {
-        switch(fuel) {
-            case "gasoline":
-            case "eletric":
-            case "diesel":
-            case "hybrid":
-                this.fuel = fuel;
-                break;
-            default:
-                System.out.println("Invalid car fuel type");
-        }
-    }
-
     public int getYear() {
         return year;
     }
@@ -68,5 +59,13 @@ class Car {
         } else {
             System.out.println("invalid car model date");
         }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
