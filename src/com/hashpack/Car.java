@@ -6,7 +6,7 @@ class Car {
     private String brand;
     private String color;
     private int year;
-    private String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche"};
+    private String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche", "toyota"};
 
     public Car(int id, String b, String c, int y) {
         setId(id);
@@ -16,10 +16,11 @@ class Car {
     }
 
     public String getCarParameters() {
-        String carInstance = "ID: " + id + "\n" +
-                "Brand:" + brand + "\n" +
-                "Color: " + color + "\n" +
-                "Model year: " + year + "\n";
+        String carInstance = "ID: " + getId() + "\n" +
+                "Brand:" + getBrand() + "\n" +
+                "Color: " + getColor() + "\n" +
+                "Model year: " + getYear() + "\n" +
+                "-------------------------------";
         return carInstance;
     }
 
