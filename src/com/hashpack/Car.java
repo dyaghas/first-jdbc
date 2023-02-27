@@ -7,10 +7,6 @@ import java.util.Scanner;
 
 class Car {
 
-    private int id;
-    private String brand;
-    private String color;
-    private int year;
     private static String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche", "toyota"};
 
     public Car() {
@@ -123,53 +119,5 @@ class Car {
 
     public static void deleteCar(int id) {
 
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String b) {
-        b = b.toLowerCase();
-        //verify if the specified brand is present
-        for(int i = 0; i < brands.length; i++) {
-            if(b.equals(brands[i])) {
-                this.brand = b;
-                break;
-            }
-        }
-        if(this.brand == null) {
-            System.out.println("Invalid brand");
-            throw new IllegalArgumentException("Invalid brand");
-        }
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        if(year >= 1886 && year <= 2023){
-            this.year = year;
-        } else {
-            System.out.println("Invalid date");
-            throw new IllegalArgumentException("Invalid date");
-        }
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

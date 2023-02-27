@@ -5,11 +5,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    static Car car = new Car() {
-
-    };
-
     public static void main(String[] args) {
+
         try {
             //Connect to database
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_database",
@@ -32,13 +29,13 @@ public class Main {
                 input = scan.nextLine();
                 switch(input) {
                     case "new":
-                        car.createCarInstance(id, myConn);
+                        Car.createCarInstance(id, myConn);
                         break;
                     case "list":
-                        car.listCars(myConn);
+                        Car.listCars(myConn);
                         break;
                     case "search":
-                        car.searchCar(myConn);
+                        Car.searchCar(myConn);
                         break;
                     default:
                         System.out.println("invalid command");
@@ -47,7 +44,7 @@ public class Main {
             myStmt.close();
             myConn.close();
         } catch(Exception exc) {
-
+            System.out.println("Something went wrong");
         }
     }
 }
