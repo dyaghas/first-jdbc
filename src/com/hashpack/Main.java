@@ -1,6 +1,7 @@
 package com.hashpack;
 
 import java.sql.*;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -19,10 +20,11 @@ public class Main {
                 System.out.print("""
                         commands:\s
                         'new' - add new car\s
+                        'delete' - delete a car\s
                         'list' - list cars\s
                         'finish' - finish application\s
-                        'search' - search for a specific car
-
+                        'search' - search for a specific car\s
+                        
                         """
                 );
                 Scanner scan = new Scanner(System.in);
@@ -36,6 +38,9 @@ public class Main {
                         break;
                     case "search":
                         Car.searchCar(myConn);
+                        break;
+                    case "delete":
+                        Car.deleteCar(myConn);
                         break;
                     default:
                         System.out.println("invalid command");

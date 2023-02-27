@@ -3,6 +3,7 @@ package com.hashpack;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.HashMap;
 import java.util.Scanner;
 
 class Car {
@@ -60,6 +61,7 @@ class Car {
                     pstmt.setString(2, color);
                     pstmt.setInt(3, model_year);
                     pstmt.executeUpdate();
+                    System.out.println("Car successfully added to database");
                 } catch (Exception IllegalArgumentException) {
                     System.out.println("Adding the car was not possible");
                 }
@@ -95,10 +97,10 @@ class Car {
     }
 
     public static void searchCar(Connection conn) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("insert car ID: ");
+        int id = scanner.nextInt();
         try {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("insert car ID: ");
-            int id = scanner.nextInt();
             PreparedStatement pstmt = conn.prepareStatement(
                     "SELECT car_id, color, model_year, brand FROM car WHERE car_id = ?");
             pstmt.setInt(1, id);
@@ -121,7 +123,19 @@ class Car {
         }
     }
 
-    public static void deleteCar(int id) {
-
+    public static void deleteCar(Connection conn) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("insert car ID: ");
+        int id = scanner.nextInt();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement(
+                    "DELETE FROM car WHERE car_id = ?");
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            pstmt.close();
+            System.out.println("Car " + id + " successfully deleted from database");
+        } catch (Exception IllegalArgumentException) {
+            System.out.println("Deleting car was not possible");
+        }
     }
 }
