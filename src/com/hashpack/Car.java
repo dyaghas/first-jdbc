@@ -7,7 +7,11 @@ import java.util.Scanner;
 
 class Car {
 
-    private static String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche", "toyota"};
+    private static String[] brands = new String[]{"bmw", "chevrolet", "ford", "honda", "hyundai", "porsche", "toyota",
+    "volvo", "acura", "ferrari", "lamborghini", "nissan", "mazda", "volkswagen", "mercedes-benz", "audi", "renault",
+            "peugeot", "opel", "citroen", "mitsubishi", "subaru", "suzuki", "fiat", "tesla", "mini", "jeep", "lexus",
+            "chrysler", "jaguar", "dodge", "alfa romeo", "pontiac", "ram", "gmc", "lotus", "abarth", "bentley",
+            "aston martin", "mclaren", "shelby", "bugatti", "koenigsegg"};
 
     public Car() {
 
