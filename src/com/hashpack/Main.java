@@ -12,11 +12,7 @@ public class Main {
             //Database user and password are accessed through the getenv function. To make it work in a different
             //machine, create your own environment variables or hardcode them instead.
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_database",
-<<<<<<< HEAD
                     System.getenv("PHPMYADMIN_ROOT_USER"), System.getenv("PHPMYADMIN_ROOT_PASSWORD"));
-=======
-                    "root", "");
->>>>>>> ef9a8fe6d2407fcc2388d7fc89778af950c4f152
             Statement myStmt = myConn.createStatement();
 
             //input initialization, value has to be different from "finish"
