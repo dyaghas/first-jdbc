@@ -22,6 +22,7 @@ public class Main {
                         commands:\s
                         owner:
                             'register-owner' - register new owner\s
+                            'search-owner' - search for a specific owner\s
                         car:
                             'new-car' - add new car\s
                             'delete-car' - delete a car\s
@@ -44,6 +45,9 @@ public class Main {
                         break;
                     case "list-owners":
                         Owner.listOwners(myConn);
+                        break;
+                    case "search-owner":
+                        Owner.searchOwner(myConn, Owner.getOwnerId());
                         break;
                     case "new-car":
                         Car.createCarInstance(myConn);
