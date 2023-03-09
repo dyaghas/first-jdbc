@@ -9,8 +9,10 @@ public class Main {
 
         try {
             //Connect to database
+            //Database user and password are accessed through the getenv function. To make it work in a different
+            //machine, create your own environment variables or hardcode them instead.
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_database",
-                    "root", "phpmyadmin@777@Dyaghas");
+                    System.getenv("PHPMYADMIN_ROOT_USER"), System.getenv("PHPMYADMIN_ROOT_PASSWORD"));
             Statement myStmt = myConn.createStatement();
 
             //input initialization, value has to be different from "finish"
