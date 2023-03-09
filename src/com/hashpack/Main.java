@@ -10,7 +10,7 @@ public class Main {
         try {
             //Connect to database
             Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/car_database",
-                    "root", "phpmyadmin@777@Dyaghas");
+                    "root", "");
             Statement myStmt = myConn.createStatement();
 
             //input initialization, value has to be different from "finish"
