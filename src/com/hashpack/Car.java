@@ -46,9 +46,8 @@ class Car {
     }
 
     //creates a car istance
-    public static void createCarInstance(int id, Connection myConn) {
+    public static void createCarInstance(Connection myConn) {
         Scanner scanner = new Scanner(System.in);
-        id = id + 1;
         System.out.print("Car brand: ");
         String brand = scanner.nextLine();
         System.out.print("Car color: ");
@@ -60,7 +59,6 @@ class Car {
         if(verifyBrand(brand)) {
             //verify if car manufacture year is valid
             if(verifyYear(model_year)) {
-                System.out.println(id);
                 System.out.println(brand);
                 System.out.println(color);
                 System.out.println(model_year);
